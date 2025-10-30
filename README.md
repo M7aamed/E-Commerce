@@ -59,3 +59,41 @@ This project provides a simple and functional shopping experience — including 
 1️⃣ Clone the repository:
 ```bash
 git clone https://github.com/M7aamed/E-Commerce.git
+
+2️⃣ Navigate to the project folder:
+
+cd E-Commerce
+
+3️⃣ Install dependencies:
+
+npm install
+
+4️⃣ Create a .env file:
+
+MONGO_URI=your_mongodb_connection_string
+SENDGRID_API_KEY=your_sendgrid_api_key
+PORT=3000
+
+5️⃣ Run the project:
+
+npm start
+
+6️⃣ Open your browser and visit:
+
+http://localhost:3000
+
+💡Purpose
+
+This project was created as a learning project to practice building a full-stack e-commerce application using Node.js, Express, and MongoDB.
+
+
+👨‍💻 Developer
+
+Mohammed Ashraf Mohammed
+💬 Passionate about web development and full-stack projects.
+📍 Minya, Egypt
+
+
+⭐ Contribute
+
+If you like this project, don’t forget to star ⭐ the repository or fork 🍴 it to build your own version!
