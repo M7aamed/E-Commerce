@@ -7,6 +7,7 @@
    <%- include('../includes/navigation.ejs') %>
 
     <main>
+<<<<<<< HEAD
         <% if(errorMessage){ %>
             <div class="user-message user-message--error"><%= errorMessage %></div>
         <% } %>
@@ -49,6 +50,24 @@
                 name="description"
                  id="description"
                   rows="5"><% if (editing|| hasError) { %><%= product.description %><% } %></textarea>
+=======
+        <form class="product-form" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="imageUrl">Image URL</label>
+                <input type="text" name="imageUrl" id="imageUrl" value="<% if (editing) { %><%= product.imageUrl %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" step="0.01" value="<% if (editing) { %><%= product.price %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" rows="5"><% if (editing) { %><%= product.description %><% } %></textarea>
+>>>>>>> 88515b20c13a537eb1b285bf2e12233ef9bca79b
             </div>
             <% if (editing) { %>
                 <input type="hidden" value="<%= product._id %>" name="productId">

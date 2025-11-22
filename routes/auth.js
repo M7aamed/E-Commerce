@@ -10,12 +10,19 @@ router.get("/login", authController.getLogin);
 router.post(
   "/login",
   [
+<<<<<<< HEAD
     body("email").isEmail().withMessage("Please Enter Valid Email .")
     .normalizeEmail(),
     body("password", "Please Enter a Valid Password ")
       .isLength({ min: 5 })
       .isAlphanumeric()
       .trim(),
+=======
+    body("email").isEmail().withMessage("Please Enter Valid Email ."),
+    body("password", "Please Enter a Valid Password ")
+      .isLength({ min: 5 })
+      .isAlphanumeric(),
+>>>>>>> 88515b20c13a537eb1b285bf2e12233ef9bca79b
   ],
   authController.postLogin
 );
@@ -35,6 +42,7 @@ router.post(
             );
           }
         });
+<<<<<<< HEAD
       })
       .normalizeEmail(),
     body("password", "Please Enter a Valid Password ")
@@ -44,6 +52,13 @@ router.post(
     body("confirmPassword")
     .trim()
     .custom((value, { req }) => {
+=======
+      }),
+    body("password", "Please Enter a Valid Password ")
+      .isLength({ min: 5 })
+      .isAlphanumeric(),
+    body("confirmPassword").custom((value, { req }) => {
+>>>>>>> 88515b20c13a537eb1b285bf2e12233ef9bca79b
       if (value !== req.body.password) {
         throw new Error("Password Have To Match!");
       }
