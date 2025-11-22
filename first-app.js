@@ -5,13 +5,14 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const csrf = require("csurf");
-const flash = require('connect-flash');
-
+const flash = require("connect-flash");
+require('dotenv').config();
 const errorController = require("./controllers/error");
 const User = require("./models/user");
 
-const MONGODB_URI =
-  "mongodb+srv://mohammedasharf8:962616Mm%40%23@mycluster.ysbgqd2.mongodb.net/shop";
+const DATABASE_CONNECTION_STRING = process.env.DATABASE_CONNECTION_STRING;;
+const DATABASE_PORT = process.env.DATABASE_PORT || 3000;
+const MONGODB_URI = DATABASE_CONNECTION_STRING;
 const app = express();
 const store = new MongoDBStore({
   uri: MONGODB_URI,
@@ -78,7 +79,7 @@ mongoose
   .connect(MONGODB_URI)
   .then((result) => {
     console.log("CONNECTED");
-    app.listen(3000);
+    app.listen(DATABASE_PORT);
   })
   .catch((err) => {
     console.log(err);
